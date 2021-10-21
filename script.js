@@ -10,19 +10,14 @@ arr.map((a) => (r[a] = (r[a] || 0) + 1));
 
 // question 2
 
-const shiftArray = (arr, x) => {
-  let newArr = [];
-  console.log();
-  for (let i = arr.length - 1; i >= 0; i--) {
-    if (i < x) {
-      let arrIndex = arr.length - 1 - i;
-      newArr[i] = arr[arrIndex];
-    } else {
-      let arrIndex = i - x;
-      newArr[i] = arr[arrIndex];
-    }
+const array = [1, 2, 3, 4, 5];
+const position = 3;
+
+const shiftArray = (arr, n) => {
+  for (let i = 0; i < n; i++) {
+    arr.unshift(arr.pop());
   }
-  return newArr;
+  return arr;
 };
 
-console.log(shiftArray([1, 2, 3, 4, 5], 2));
+console.log(shiftArray(array, position));
