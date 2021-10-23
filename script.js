@@ -1,12 +1,26 @@
 // question 1
 
-const arr = [1, 1, 4, 2, 2, 2, 3, 1];
-let r = {};
-arr.map((a) => (r[a] = (r[a] || 0) + 1));
-var res = arr.find((a) => r[a] === 1);
-console.log(res);
+const array1 = [1, 1, 4, 2, 2, 2, 3, 1, 4];
 
-arr.map((a) => (r[a] = (r[a] || 0) + 1));
+const findFirstUnique = (arr) => {
+  let newArr = [];
+  for (i = 0; i < arr.length; i++) {
+    for (j = 0; j < arr.length; j++) {
+      if (i == j) {
+        continue;
+      }
+      if (arr[i] === arr[j]) {
+        break;
+      }
+    }
+    if (j == arr.length) {
+      newArr.push(arr[i]);
+    }
+  }
+  return `First unique value from given an array is ==> ${newArr[0]}`;
+};
+
+console.log(findFirstUnique(array1));
 
 // question 2
 
@@ -17,7 +31,7 @@ const shiftArray = (arr, n) => {
   for (let i = 0; i < n; i++) {
     arr.unshift(arr.pop());
   }
-  return arr;
+  return `The shifted array is ==> ${arr}`;
 };
 
 console.log(shiftArray(array, position));
