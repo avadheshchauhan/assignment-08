@@ -1,6 +1,6 @@
 // question 1
 
-const array1 = [1, 1, 4, 2, 2, 2, 3, 1, 4];
+const array1 = [9, 2, 3, 2, 6, 6];
 
 const findFirstUnique = (arr) => {
   let newArr = [];
